@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  form(method="post", action="/users/signup")
+    .form-group
+      label(for="formName") 邮箱 
+      input.form-control#formName(type="email" placeholder="email" name="name")
+      label(for="formPass") 密码 
+      input.form-control#formPass(type="password" placeholder="password" name="password")
+      button.btn.btn-btn-sucess(type="submit") 提交
+      

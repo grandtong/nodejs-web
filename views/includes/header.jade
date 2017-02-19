@@ -1,0 +1,23 @@
+header
+  .navbar.navbar-inverse.navbar-fixed-top(rol="bavigation")
+    .container
+      .navbar-header
+        button.navbar-toggle(type="button", data-toggle="collapse", data-target="#breadBtn")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      .collapse.navbar-collapse#breadBtn
+        ul.nav.navbar-nav
+          li
+            a(href="/") home
+          li
+            a(href="/category") category
+          li
+            a(href="/bbs") bbs
+          li
+            a(href="/about") about
+        ul.nav.navbar-nav.navbar-inverse.navbar-right
+          li
+            a(href='/user') user
