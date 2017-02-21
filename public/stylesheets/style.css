@@ -1,15 +1,72 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.user-sign .s-inner-c {
+  width: 300px;
+  margin: 20px auto;
+  min-width: 300px;
 }
-
-a {
-  color: #00B7FF;
+.user-sign .s-inner-c .sign-header {
+  text-align: center;
 }
-.pull-bottom {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+.user-sign .s-inner-c .sign-header .logo {
+  width: 120px;
+  height: 80px;
+  display: block;
+  background: url(../images/news.png) no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+}
+.user-sign .s-inner-c .sign-header .text {
+  font-size: 18px;
+  margin: 30px 0 20px;
+}
+.user-sign .s-inner-c .index-desk .index-tab-nav {
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+.user-sign .s-inner-c .index-desk .index-tab-nav a {
+  line-height: 35px;
+  width: 4em;
+  float: left;
+  margin: 0 auto;
+}
+.group-input {
+  border: 1px solid rgba(9, 9, 9, 0.4);
+  box-shadow: 0 0 1px;
+}
+.group-input .input-wrapper:first-child {
+  border-bottom: 1px solid rgba(9, 9, 9, 0.2);
+}
+.group-input .input-wrapper:nth-child(2) {
+  border-bottom: 1px solid rgba(9, 9, 9, 0.2);
+}
+.input-wrapper {
+  height: 47px;
+  line-height: 47px;
+  background-color: #fff;
+}
+.input-wrapper input {
   width: 100%;
-  
+  padding: 1em 0.8em;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+.form-btn {
+  margin-top: 20px;
+}
+.form-btn button {
+  background-color: #333;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  line-height: 41px;
+  color: #fff;
+  font-size: 18px;
+}
+#signIn {
+  display: none;
+}
+#sup {
+  border: 1px solid #777;
 }

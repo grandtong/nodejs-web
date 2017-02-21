@@ -1,11 +1,35 @@
 extends ../layout
-
 block content
-  form(method="post", action="/users/signup")
-    .form-group
-      label(for="formName") 邮箱 
-      input.form-control#formName(type="email" placeholder="email" name="name")
-      label(for="formPass") 密码 
-      input.form-control#formPass(type="password" placeholder="password" name="password")
-      button.btn.btn-btn-sucess(type="submit") 提交
-      
+  .user-sign
+    .s-inner-c
+      .sign-header
+        h1.logo
+        h2.text 没有人生活在——非黑即白的世界里
+      .index-desk
+        .index-tab-nav
+          .nav-slider.clearfix#navSlider
+            a#sup(href="#signup") 注册
+            a#sin(href="#signin") 登录
+            span.nav-slider-bar
+        .form-signup#signUp
+          form(method="post", action="/user/signup")
+           .group-input
+            .input-wrapper
+              input#formName(type="email" placeholder="姓名" name="name")
+            .input-wrapper
+              input#formPass(type="tel" placeholder="手机号（仅支持中国大陆）" name="tel")
+            .input-wrapper
+              input#formPass(type="password" placeholder="密码（不少于6位）" name="password")
+           .form-btn
+            button(type="submit") 提交
+        .form-signin#signIn
+          form(method="post", action="/user/signin")
+           .group-input
+            .input-wrapper
+              input#formName(type="text" placeholder="手机号或邮箱" name="name")
+            .input-wrapper
+              input#formPass(type="password" placeholder="密码" name="password")
+           .form-btn
+            button(type="submit") 提交  
+    
+        
