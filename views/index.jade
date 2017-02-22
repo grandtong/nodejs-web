@@ -2,5 +2,24 @@ extends layout
 
 block content
   include ./includes/header
-  h1= title
-  p Welcome to #{title}
+  .news-page.clearfix
+    .default-box.h-60.w25
+      h2 科技
+      img(src="/images/nav/tech.png", alt="")
+      .tips 最潮的科技了，houhouhou~~
+    .default-box.h-60.w50.border-r1
+      h2 头条
+      img(src="/images/nav/top.png", alt="")
+      .tips 最新最热的内容，lalala~~~~~ 
+    .default-box.h-60.w25
+      h2 财经
+      img(src="/images/nav/finance.png", alt="")
+      .tips 财经新闻。hiahia~
+    .default-box.h-40.w50.border-r1
+      h2 体育
+      img(src="/images/nav/sports.png", alt="")
+      .tips 体育新闻，heiheihei~
+    .default-box.h-40.w50
+      h2 社会
+      img(src="/images/nav/social.png", alt="")
+      .tips 社会的一些小动态，hehehe~
