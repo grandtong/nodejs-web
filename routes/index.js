@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var data={
-          "title": "标题",
-          "category": "分类"
-  }
+var mongoose= require('mongoose');
+var userSchema = require('../src/schemas/userSchema');
 /* GET home page. */
+
+var User=mongoose.model('User',userSchema);
 router.get('/', function(req, res, next) {
+
   res.render('index', {title: "express"});
 });
 

@@ -44,9 +44,11 @@
    .input-wrapper:first-child {
      border-bottom: 1px solid rgba(9,9,9,.2);
     }
-    .input-wrapper:nth-child(2) {
+   .input-wrapper:nth-child(2) {
      border-bottom: 1px solid rgba(9,9,9,.2);
-
+     }
+   .input-wrapper:nth-child(3) {
+     border-bottom: 1px solid rgba(9,9,9,.2);
      }
 }
 .input-wrapper {
@@ -129,4 +131,77 @@
   margin: 0;
   padding: 0;
   position: relative;
+}
+
+header.home {
+  .container{
+    height: 60px;
+    display: block;
+    box-sizing: border-box;
+    .fl-box {
+      float: left;
+      height: 100%;
+      width: 70%;
+      box-sizing: border-box;
+      border-right: 1px solid #e5e5e5;
+      ul {
+        float: left;
+        vertical-align: middle;
+        li {
+          display: block;
+          float: left;
+          font-size: 16px;
+          margin-left: 20px;
+          line-height: 60px;
+          font-weight: 200;
+          cursor: pointer;
+        }
+        .dark {
+          color: #222;
+          font-weight: 400;
+        }
+        .light {
+          color: #aaa;
+        }
+      }
+    }
+    .fr-box {
+      float: right;
+      width: 30%;
+      height: 100%;
+      box-sizing: border-box;
+      
+      .body{
+        float: right;
+         .search {
+        width: 30px;
+        height: 30px;
+        background: url(/images/search.svg) no-repeat;
+        background-size: contain;
+        float: left;
+        margin: 15px;
+        cursor: pointer;
+      }
+      .edit {
+        width: 30px;
+        height: 30px;
+        background: url(/images/edit.svg) no-repeat;
+        background-size: contain;
+        float: left;
+        margin: 15px;
+        cursor: pointer;
+      }
+      .user {
+        width: 30px;
+        height: 30px;
+        background: url(/images/wow.png) no-repeat;
+        background-size: contain;
+        float: left;
+        margin: 15px;
+        cursor: pointer;
+      }
+      }
+     
+    }
+  }
 }

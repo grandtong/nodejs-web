@@ -2,7 +2,7 @@ var mongoose= require('mongoose');
 var bcrypt=require('bcrypt-nodejs');
 
 var SALT_NUM=10;
-mongoose.connect("mongodb://localhost/nodeNews")
+
 
 // 构建数据模型
 var userSchema= mongoose.Schema({
@@ -10,7 +10,7 @@ var userSchema= mongoose.Schema({
         type:String,
         unique:true
     },
-    creatTime:{
+    createTime:{
         type:Date,
         default:Date.now()
     },
@@ -27,12 +27,12 @@ var userSchema= mongoose.Schema({
 userSchema.pre('save',function(next) {
   var user=this;
   if(this.isNew) {
-    this.creatTime=Data.now()
+    this.creatTime=Date.now()
   }
   bcrypt.genSalt(SALT_NUM, function(err, salt) {
     if (err) return next(err)
 
-    bcrypt.hash(user.password, salt, function(err, hash) {
+    bcrypt.hash(user.password, salt, null,function(err, hash) {
       if (err) return next(err)
 
       user.password = hash
@@ -44,17 +44,17 @@ userSchema.pre('save',function(next) {
 userSchema.methods={
   comparePass:function(_password,cb) {
     bcrypt.compare(_password,this.password, function(err,isMatch) {
-      if(err) returncb(err)
+      if(err) return cb(err)
       cb(null,isMatch)
     })
   }
 }
-// 添加静态查询方法
+// 添加静态方法,排序，查找。
 userSchema.statics = {
   fetch: function(cb) {
     return this
       .find({})
-      .sort('meta.updateAt')
+      .sort('createTime')
       .exec(cb)
   },
   findById: function(id, cb) {

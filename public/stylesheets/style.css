@@ -39,6 +39,9 @@
 .group-input .input-wrapper:nth-child(2) {
   border-bottom: 1px solid rgba(9, 9, 9, 0.2);
 }
+.group-input .input-wrapper:nth-child(3) {
+  border-bottom: 1px solid rgba(9, 9, 9, 0.2);
+}
 .input-wrapper {
   height: 47px;
   line-height: 47px;
@@ -117,4 +120,72 @@
   margin: 0;
   padding: 0;
   position: relative;
+}
+header.home .container {
+  height: 60px;
+  display: block;
+  box-sizing: border-box;
+}
+header.home .container .fl-box {
+  float: left;
+  height: 100%;
+  width: 70%;
+  box-sizing: border-box;
+  border-right: 1px solid #e5e5e5;
+}
+header.home .container .fl-box ul {
+  float: left;
+  vertical-align: middle;
+}
+header.home .container .fl-box ul li {
+  display: block;
+  float: left;
+  font-size: 16px;
+  margin-left: 20px;
+  line-height: 60px;
+  font-weight: 200;
+  cursor: pointer;
+}
+header.home .container .fl-box ul .dark {
+  color: #222;
+  font-weight: 400;
+}
+header.home .container .fl-box ul .light {
+  color: #aaa;
+}
+header.home .container .fr-box {
+  float: right;
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+}
+header.home .container .fr-box .body {
+  float: right;
+}
+header.home .container .fr-box .body .search {
+  width: 30px;
+  height: 30px;
+  background: url(/images/search.svg) no-repeat;
+  background-size: contain;
+  float: left;
+  margin: 15px;
+  cursor: pointer;
+}
+header.home .container .fr-box .body .edit {
+  width: 30px;
+  height: 30px;
+  background: url(/images/edit.svg) no-repeat;
+  background-size: contain;
+  float: left;
+  margin: 15px;
+  cursor: pointer;
+}
+header.home .container .fr-box .body .user {
+  width: 30px;
+  height: 30px;
+  background: url(/images/wow.png) no-repeat;
+  background-size: contain;
+  float: left;
+  margin: 15px;
+  cursor: pointer;
 }

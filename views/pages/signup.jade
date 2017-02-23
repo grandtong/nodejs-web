@@ -20,8 +20,10 @@ block content
               input#formPass(type="tel" placeholder="手机号（仅支持中国大陆）" name="tel")
             .input-wrapper
               input#formPass(type="password" placeholder="密码（不少于6位）" name="password")
+            .input-wrapper
+                input#formPass(type="password" placeholder="重复上一次的密码" name="repassword")
            .form-btn
-            button(type="submit") 提交
+              button(type="submit") 提交
         .form-signin#signIn
           form(method="post", action="/user/signin")
            .group-input
