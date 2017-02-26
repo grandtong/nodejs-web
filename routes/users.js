@@ -5,10 +5,13 @@ var mongoose=require('mongoose');
 var User=mongoose.model('User',userSchema);
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('./pages/signup',{title: 'user sign up'})
+  res.render('./pages/signup',{title: '注册/登录页面'})
 });
 router.get('/signup', function(req, res, next) {
   res.render('./pages/signinerr',{title: '用户名输入错误'})
+});
+router.get('/signin', function(req, res, next) {
+  res.redirect('/user#signup')
 });
 
 router.post('/signup', function(req, res, next) {

@@ -12,7 +12,7 @@ var userSchema= mongoose.Schema({
     },
     createTime:{
         type:Date,
-        default:Date.now()
+        default: Date.now()+8*60*60*1000
     },
     password: {
       type: String
@@ -27,7 +27,7 @@ var userSchema= mongoose.Schema({
 userSchema.pre('save',function(next) {
   var user=this;
   if(this.isNew) {
-    this.creatTime=Date.now()
+    this.creatTime=Date.now();
   }
   bcrypt.genSalt(SALT_NUM, function(err, salt) {
     if (err) return next(err)

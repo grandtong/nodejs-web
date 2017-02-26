@@ -15,23 +15,31 @@ block content
           form(method="post", action="/user/signup")
            .group-input
             .input-wrapper
-              input#formName(type="email" placeholder="姓名" name="name")
+              input(type="text" placeholder="姓名" name="name")
+              span
             .input-wrapper
-              input#formPass(type="tel" placeholder="手机号（仅支持中国大陆）" name="tel")
+              input(type="tel" placeholder="手机号（仅支持中国大陆）" name="tel")
+              span
             .input-wrapper
-              input#formPass(type="password" placeholder="密码（不少于6位）" name="password")
+              input(type="password" placeholder="密码（不少于6位）" name="password")
+              span
             .input-wrapper
-                input#formPass(type="password" placeholder="重复上一次的密码" name="repassword")
+                input(type="password" placeholder="重复上一次的密码" name="repassword")
+                span
            .form-btn
-              button(type="submit") 提交
+              button(type="submit" disabled="disabled") 提交
         .form-signin#signIn
           form(method="post", action="/user/signin")
            .group-input
             .input-wrapper
-              input#formName(type="text" placeholder="手机号或邮箱" name="name")
+              input(type="tel" placeholder="手机号" name="name")
+              span
             .input-wrapper
-              input#formPass(type="password" placeholder="密码" name="password")
+              input(type="password" placeholder="密码" name="password")
+              span
            .form-btn
-            button(type="submit") 提交  
+            button(type="submit" disabled="disabled") 提交  
+  script(src="/javascripts/formCheck.js")
+  
     
         

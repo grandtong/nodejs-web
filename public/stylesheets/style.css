@@ -46,6 +46,7 @@
   height: 47px;
   line-height: 47px;
   background-color: #fff;
+  position: relative;
 }
 .input-wrapper input {
   width: 100%;
@@ -53,6 +54,12 @@
   outline: none;
   border: none;
   box-sizing: border-box;
+}
+.input-wrapper span {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  font-weight: 300;
 }
 .form-btn {
   margin-top: 20px;
@@ -188,4 +195,26 @@ header.home .container .fr-box .body .user {
   float: left;
   margin: 15px;
   cursor: pointer;
+}
+@media screen and (max-width: 650px) {
+  img {
+    display: none;
+  }
+  header.home .container .fr-box .body .search {
+    width: 20px;
+    height: 20px;
+  }
+  header.home .container .fr-box .body .edit {
+    width: 20px;
+    height: 20px;
+  }
+  header.home .container .fr-box .body .user {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 414px) {
+  header.home {
+    background-color: red;
+  }
 }

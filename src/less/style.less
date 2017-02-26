@@ -55,12 +55,19 @@
   height: 47px;
   line-height: 47px;
   background-color: #fff;
+  position: relative;
   input {
     width: 100%;
     padding: 1em 0.8em;
     outline: none;
     border: none;
     box-sizing: border-box;
+  }
+  span {
+    position: absolute;
+    top: 0;
+    right: 1em;
+    font-weight: 300;
   }
 }
 .form-btn {
@@ -84,6 +91,7 @@
 }
 
 // index页面
+
 .default-box {
   border-top: 1px solid #f2f2f2;
   float: left;
@@ -91,6 +99,7 @@
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
+
   h2{
     margin-top: 10px;
     font-size: 34px;
@@ -203,5 +212,36 @@ header.home {
       }
      
     }
+  }
+}
+@media screen and (max-width:650px) {
+  img {
+    display: none; 
+  }
+  header.home {
+    .container {
+      .fr-box {
+        .body {
+            .search {
+              width: 20px;
+              height: 20px;
+            }
+            .edit {
+              width: 20px;
+              height: 20px;
+            }
+            .user {
+              width: 20px;
+              height: 20px;
+            }
+        }
+      }
+    }
+  }
+  
+}
+@media screen and (max-width:414px) {
+  header.home {
+    background-color: red;
   }
 }

@@ -6,8 +6,10 @@ var userSchema = require('../src/schemas/userSchema');
 
 var User=mongoose.model('User',userSchema);
 router.get('/', function(req, res, next) {
-
-  res.render('index', {title: "express"});
+  if(req.session.user){
+   return res.render('index', {title: "express"});
+  }
+  res.redirect('/user');
 });
 
 module.exports = router;
