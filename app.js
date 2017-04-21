@@ -15,6 +15,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(config.mongodb);
 var app = express();
 
+console.log("serve starting");
 // 读取数据库模型
 var models_path = __dirname + '/src';
 var walk = function(path) {
@@ -33,8 +34,8 @@ var walk = function(path) {
       }
     });
 }
-// walk(models_path);
-
+walk(models_path);
+console.log("database walked");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -81,4 +82,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// 监听端口，启动程序
+app.listen(config.port, function () {
+  console.log(`listening on port ${config.port}`);
+});
 module.exports = app;

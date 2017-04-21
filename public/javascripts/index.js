@@ -1,6 +1,6 @@
 window.onload=function(){
   // if判断后可以防止在非注册，登陆页面找不到dom对象而报错
-  if(window.location.hash==="#signup"||window.location.hash==="#signin"||window.location.pathname==="/user"){
+  if(window.location.hash==="#signup"||window.location.hash==="#signin"||window.location.pathname==="/user/signin"){
     var signin=document.getElementById('signIn');
     var signup=document.getElementById('signUp');
     var sin=document.getElementById('sin');

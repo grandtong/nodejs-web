@@ -1,14 +1,17 @@
 var mongoose= require('mongoose');
-var bcrypt=require('bcrypt-nodejs');
+var bcrypt = require('bcryptjs');
 
 var SALT_NUM=10;
 
 
 // 构建数据模型
-var userSchema= mongoose.Schema({
+var UserSchema= mongoose.Schema({
+   tel: {
+        type: Number,
+        unique: true
+   },
    name:{
-        type:String,
-        unique:true
+        type:String
     },
     createTime:{
         type:Date,
@@ -24,7 +27,7 @@ var userSchema= mongoose.Schema({
 });
 
 // 密码保存之前加盐
-userSchema.pre('save',function(next) {
+UserSchema.pre('save',function(next) {
   var user=this;
   if(this.isNew) {
     this.creatTime=Date.now();
@@ -32,7 +35,7 @@ userSchema.pre('save',function(next) {
   bcrypt.genSalt(SALT_NUM, function(err, salt) {
     if (err) return next(err)
 
-    bcrypt.hash(user.password, salt, null,function(err, hash) {
+    bcrypt.hash(user.password, salt, function(err, hash) {
       if (err) return next(err)
 
       user.password = hash
@@ -40,17 +43,17 @@ userSchema.pre('save',function(next) {
     })
   })
 })
+
 // 添加密码验证方法
-userSchema.methods={
-  comparePass:function(_password,cb) {
+UserSchema.methods.comparePass=function(_password,cb) {
     bcrypt.compare(_password,this.password, function(err,isMatch) {
       if(err) return cb(err)
       cb(null,isMatch)
     })
   }
-}
+
 // 添加静态方法,排序，查找。
-userSchema.statics = {
+UserSchema.statics = {
   fetch: function(cb) {
     return this
       .find({})
@@ -64,4 +67,4 @@ userSchema.statics = {
   }
 }
 
-module.exports=userSchema;
+module.exports=UserSchema;
