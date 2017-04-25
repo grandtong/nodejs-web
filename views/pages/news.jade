@@ -1,0 +1,17 @@
+extends ../layout
+block content
+	.news-detail
+		.news-header
+		ul.news-element
+			each val in data
+				a.news-item-wraper(href= '#{val.docurl}')
+					li.news-item
+						.news-title #{val.title}
+						img.news-pic(src=val.imgurl)
+						.news-time #{val.time}
+
+					
+
+
+
+			

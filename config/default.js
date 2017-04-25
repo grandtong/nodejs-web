@@ -1,5 +1,5 @@
 module.exports = {
-	port: 3003,
+	port: 3000,
 	session: {
 		secret: 'node_news',
 		key: 'node_news',

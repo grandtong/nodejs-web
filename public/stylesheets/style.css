@@ -97,13 +97,6 @@
   height: 160px;
   width: 160px;
 }
-.default-box .tips {
-  position: absolute;
-  top: 80%;
-  left: 0;
-  text-align: left;
-  padding: 0 20px;
-}
 .w25 {
   width: 25%;
 }
@@ -217,4 +210,31 @@ header.home .container .fr-box .body .user {
   header.home {
     background-color: red;
   }
+}
+.news-detail {
+  width: 100%;
+}
+.news-detail .news-header {
+  width: 100%;
+  height: 60px;
+  background-color: #666;
+  margin-bottom: 20px;
+}
+.news-detail .news-element {
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+}
+.news-detail .news-element .news-item-wraper {
+  padding: 20px 10px;
+  box-sizing: border-box;
+  border: 0 ;
+  border-bottom: 1px solid rgba(9, 9, 9, 0.2);
+  float: left;
+  width: 33.3%;
+  margin-bottom: 20px;
+}
+.news-detail .news-element .news-item-wraper .news-item .news-pic {
+  width: 80%;
+  height: 200px;
 }

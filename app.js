@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var fs=require('fs');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var news = require('./routes/news');
 var mongoose= require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
@@ -63,6 +64,7 @@ app.use(session({
 
 app.use('/', index);
 app.use('/user', users);
+app.use('/news', news);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -82,8 +84,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// 监听端口，启动程序
-app.listen(config.port, function () {
-  console.log(`listening on port ${config.port}`);
-});
 module.exports = app;

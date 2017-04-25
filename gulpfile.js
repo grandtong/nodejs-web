@@ -7,6 +7,6 @@ gulp.task('testLess', function () {
         .pipe(gulp.dest('public/stylesheets'));
 });
  
-gulp.task('testWatch', function () {
+gulp.task('default', function () {
     gulp.watch('src/**/*.less', ['testLess']); //当所有less文件发生改变时，调用testLess任务
 });

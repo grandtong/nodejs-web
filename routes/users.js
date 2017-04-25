@@ -5,6 +5,9 @@ var mongoose=require('mongoose');
 var User=mongoose.model('User',userSchema);
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  if(req.session.user){
+    return res.redirect('/')
+  }
   return res.redirect('/user/signin')
 });
 router.get('/signin', function(req, res, next) {
@@ -70,7 +73,7 @@ router.post('/signin', function(req, res, next) {
       if (isMatch) {
         req.session.user = user
         console.log(req.session)
-        return res.render('./index',{title: '主頁'})
+        return res.redirect('/')
       }
       else {
         return res.redirect('/user/signin')
