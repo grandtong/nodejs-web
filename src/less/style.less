@@ -99,7 +99,6 @@
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-
   h2{
     margin-top: 10px;
     font-size: 34px;
@@ -245,25 +244,49 @@ header.home {
   .news-header {
     width: 100%;
     height: 60px;
-    background-color: #666;
+    background-color: #f2f2f2;
     margin-bottom: 20px;
+    line-height: 60px;
+    font-size: 32px;
+    position:  relative;
+    .back {
+      display: block;
+      border: 1px solid #000;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      font-size: 28px;
+      line-height: 40px;
+    }
   }
   .news-element {
     box-sizing: border-box;
     width: 100%;
     display: block;
     .news-item-wraper{
-      padding: 20px 10px;
+      // padding: 20px 10px;
       box-sizing: border-box;
       border: 0 ;
+      padding-bottom: 20px;
       border-bottom: 1px solid rgba(9,9,9,.2);
       float: left;
       width: 33.3%;
       margin-bottom: 20px; 
+      height:  290px;
       .news-item{
+        border-right: 1px solid rgba(9,9,9,.2);
+        margin: 20px 10px;
+        .news-title {
+          width: 80%;
+          margin: 0 auto;
+          display: block;
+        }
         .news-pic {
           width: 80%;
           height: 200px;
+        }
+        .news-time {
+          margin-top:  5px;
         }
       }
       

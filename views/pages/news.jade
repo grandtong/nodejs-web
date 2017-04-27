@@ -1,14 +1,18 @@
 extends ../layout
 block content
 	.news-detail
-		.news-header
+		.news-header #{newsHeader}
+			a(href="/")
+				.back goback
 		ul.news-element
 			each val in data
-				a.news-item-wraper(href= '#{val.docurl}')
-					li.news-item
-						.news-title #{val.title}
-						img.news-pic(src=val.imgurl)
-						.news-time #{val.time}
+				.news-item-wraper
+					li
+						a(href= '#{val.docurl}')
+							.news-item
+								.news-title #{val.title}
+								img.news-pic(src=val.imgurl)
+								.news-time #{val.time}
 
 					
 

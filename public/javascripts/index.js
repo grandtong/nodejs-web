@@ -22,32 +22,27 @@ window.onload=function(){
  
   if(window.location.pathname==="/"){
     var tech=document.getElementById('tech');
-    var top=document.getElementById('top');
+    var top=document.getElementById('hot');
     var financial=document.getElementById('financial');
     var sport=document.getElementById('sport');
     var social=document.getElementById('social');
 
     tech.onclick=function(){
-      window.location.href='/news'
+      window.location.href='/news/tech'
     }
-  }
-if(window.location.pathname==="/news"){
-  // ajax({
-  //         type:"get",
-  //         url:"http://localhost:3000",
-  //         before:function(){
-  //           console.log("before");  
-  //         },
-  //         success:function(str){
-  //             window.str=str;
-  //             console.log('success')
-  //         },
-  //         error:function(){
-  //             console.log("error");
-  //         }
-  //     });
-  }
+    top.onclick= function(){
+      window.location.href='/news/top'
+    }
+    financial.onclick= function(){
+      window.location.href='/news/financial'
+    }
+    sport.onclick= function(){
+      window.location.href='/news/sports'
+    }
+    social.onclick= function(){
+      window.location.href='/news/social'
+    }
+  } 
 }
-  
 
 
