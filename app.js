@@ -8,6 +8,7 @@ var fs=require('fs');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var news = require('./routes/news');
+var admin = require('./routes/admin');
 var mongoose= require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
@@ -65,6 +66,7 @@ app.use(session({
 app.use('/', index);
 app.use('/user', users);
 app.use('/news', news);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
